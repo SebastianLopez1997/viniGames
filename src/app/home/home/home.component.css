@@ -1,0 +1,12 @@
+h1 {
+  font-size: 4rem;
+}
+
+.titulo {
+    text-align: center;
+  height: auto;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.781);
+  
+  color: white;
+}
