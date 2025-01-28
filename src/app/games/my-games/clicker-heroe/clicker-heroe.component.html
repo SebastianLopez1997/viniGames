@@ -1,2 +1,20 @@
-<p>clicker-heroe works!</p>
-<h1>Juego cliker</h1>
+<div class="contenedor-juego">
+  <div class="volver">
+    <h1 class="back">Juego cliker</h1>
+    <a href="" routerLink="home" class="back">VOLVER AL MENU</a>
+    <p>
+      El juego consiste en dar click todo lo que puedas al boton, pasando los
+      6,5 segundos el juego se terminara y perderas, se pondra muy dificil
+      pasando los 100 click! <br />
+      ¿Cual sera tu record?
+    </p>
+  </div>
+
+  <div id="button-container" class="container">
+    <h1 class="contadores">Contador: {{ counter }}</h1>
+    <h2 class="contadores">Record: {{ record }}</h2>
+    <button #movingButton class="moving-button" (click)="incrementCounter()">
+      ¡Haz clic!
+    </button>
+  </div>
+</div>

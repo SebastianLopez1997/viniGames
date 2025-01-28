@@ -1,0 +1,48 @@
+.back {
+  font-size: 2rem;
+  color: white;
+}
+
+.volver{
+  width: 250px;
+  
+  p{
+    font-size: 2rem;
+    color: wheat;
+  }
+}
+
+.contadores{
+  font-size: 3rem;
+  color: white;
+  
+}
+
+.contenedor-juego {
+  display: flex;
+  background-color: rgba(30, 31, 32, 0.847);
+  height: 100%;
+}
+
+.container {
+  position: relative; /* Contenedor relativo para permitir posicionamiento absoluto */
+  height: 100vh; /* Toda la altura de la pantalla */
+  width: 100vw; /* Todo el ancho de la pantalla */
+  overflow: hidden; /* Evita que el botón salga fuera de los límites */
+}
+
+.moving-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s linear; /* Movimiento suave */
+  position: relative; /* Posición inicial antes de que comience a moverse */
+}
+
+.moving-button:hover {
+  background-color: #0056b3;
+}

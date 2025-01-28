@@ -10,6 +10,15 @@ h1 {
   padding: 15px;
 }
 
+.jugar {
+  color: white;
+}
+
+.jugar:hover {
+  scale: 1.2;
+  color: red;
+}
+
 .juego {
   display: flex;
   flex-direction: column;
@@ -19,7 +28,7 @@ h1 {
   background-color: blue;
   font-size: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom-left-radius: 20%; 
+  border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
 }
 
