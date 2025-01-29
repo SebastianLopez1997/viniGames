@@ -11,8 +11,8 @@ export class HarryServicesService {
 
   http = inject(HttpClient);
 
-  getCharacters(): Observable<{ name: string; image: string; species:string }[]> {
-    return this.http.get<any>(environment.personajes).pipe(
+  getCharacters(number:string): Observable<{ name: string; image: string; species:string }[]> {
+    return this.http.get<any>(`${environment.personajes}${number}`).pipe(
       map((response) =>
         response.data.map((char: any) => ({
           name: char.attributes.name,
@@ -22,6 +22,9 @@ export class HarryServicesService {
       )
     );
   }
+  
+  
+  
 
   constructor() {}
 }
