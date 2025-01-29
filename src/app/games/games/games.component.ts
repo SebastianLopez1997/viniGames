@@ -18,6 +18,13 @@ export class GamesComponent {
       alt: 'Juego clicker',
       router: 'juego/clicker',
     },
+    
+    {
+     img: 'portada-juegos/clicker-portada.jpg',
+      titulo: 'Harry potter trivial',
+      alt: 'Harry potter trivial',
+      router: 'juego/harry-potter',
+    }
    
   ];
 }

@@ -1,0 +1,11 @@
+<div class="fondo">
+  <aside><h1 class="titulo">Trivia de Harry potter</h1></aside>
+  <div>
+    @for (item of characters; track $index) { @if (item.image != null &&
+    item.name != null && item.species != null) {
+    <h2>{{ item.name }}</h2>
+    <img src="{{ item.image }}" alt="" />
+    <h3>{{ item.species }}</h3>
+    } }
+  </div>
+</div>
