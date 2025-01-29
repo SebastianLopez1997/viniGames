@@ -21,7 +21,7 @@ export class ClickerHeroeComponent {
   record = 0;
   interval: any;
   moveInterval: any;
-  moveSpeed = 100;
+  moveSpeed = 1;
 
   @ViewChild('movingButton', { static: false }) movingButton!: ElementRef;
 
@@ -30,19 +30,33 @@ export class ClickerHeroeComponent {
 
     if (this.counter >= 10) {
       this.moveButton();
+      this.moveSpeed = 200000;
     }
 
     if (this.counter > 20) {
-      this.moveSpeed = 500;
+      this.moveSpeed = 50;
     }
-  
+
     if (this.counter >= 100 && !this.moveInterval) {
+      this.moveSpeed = 200000;
       this.startConstantMovement(); // Iniciar movimiento constante
     }
-    
+
+    if (this.counter > 120) {
+      this.moveSpeed = 250;
+    }
+
+    if (this.counter > 170) {
+      this.moveSpeed = 300;
+    }
+
+    if (this.counter > 250) {
+      this.moveSpeed = 500;
+    }
+
     this.resetInactivityTimer();
   }
-  
+
   startConstantMovement() {
     this.moveInterval = setInterval(() => {
       this.moveButton();
@@ -55,7 +69,7 @@ export class ClickerHeroeComponent {
       this.moveInterval = null;
     }
   }
-  
+
   moveButton() {
     if (!this.movingButton) return;
 
@@ -79,7 +93,7 @@ export class ClickerHeroeComponent {
       this.record = this.counter;
     }
     this.counter = 0;
-    this.moveSpeed = 1000;
+    this.moveSpeed = 1;
     this.stopConstantMovement();
   }
 
@@ -90,6 +104,6 @@ export class ClickerHeroeComponent {
 
     this.interval = setTimeout(() => {
       this.resetCounter();
-    }, 6500); 
+    }, 10000);
   }
 }
