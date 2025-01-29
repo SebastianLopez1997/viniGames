@@ -1,15 +1,13 @@
 <H1>Juegos</H1>
 <div class="contenedor-juegos">
-  <div class="juego" onclick="click()">
-    <img
-      class="imagen-juego"
-      src="https://i.pinimg.com/474x/1c/ee/d0/1ceed098558380f5c4739bb878bd7bce.jpg"
-      alt="imagen juego"
-    />
+  @for (item of juegos; track $index) {
+
+  <div class="juego">
+    <img class="imagen-juego" src="{{ item.img }}" alt="{{ item.alt }}" />
     <div class="juego-textos">
-      <h2 class="contador">Contador</h2>
-      <h3>Nombre del juego</h3>
-      <a routerLink="juego/clicker" class="jugar">Jugar!</a>
+      <h2 class="contador">{{ item.titulo }}</h2>
+      <a routerLink="{{ item.router }}" class="jugar">Jugar!</a>
     </div>
   </div>
+  }
 </div>

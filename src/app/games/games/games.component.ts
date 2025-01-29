@@ -10,5 +10,14 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 })
 export class GamesComponent {
   rt = inject(Router);
-  
+
+  juegos = [
+    {
+      img: 'portada-juegos/clicker-portada.jpg',
+      titulo: 'Clicker Heroe',
+      alt: 'Juego clicker',
+      router: 'juego/clicker',
+    },
+   
+  ];
 }
