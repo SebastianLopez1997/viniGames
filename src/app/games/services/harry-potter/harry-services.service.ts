@@ -11,8 +11,10 @@ export class HarryServicesService {
 
   http = inject(HttpClient);
 
-  getCharacters(number:string): Observable<{ name: string; image: string; species:string }[]> {
-    return this.http.get<any>(`${environment.personajes}${number}`).pipe(
+  getCharacters(
+    number: string
+  ): Observable<{ name: string; image: string; species: string }[]> {
+    return this.http.get<any>(`${environment.paginas}${number}`).pipe(  //Obtenemos las 4 paginas con 400 personajes 
       map((response) =>
         response.data.map((char: any) => ({
           name: char.attributes.name,
@@ -22,9 +24,6 @@ export class HarryServicesService {
       )
     );
   }
-  
-  
-  
 
   constructor() {}
 }
