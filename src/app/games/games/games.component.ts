@@ -20,7 +20,7 @@ export class GamesComponent {
     },
     
     {
-     img: 'portada-juegos/clicker-portada.jpg',
+     img: 'portada-juegos/trivia-potter.jpg',
       titulo: 'Harry potter trivial',
       alt: 'Harry potter trivial',
       router: 'juego/harry-potter',

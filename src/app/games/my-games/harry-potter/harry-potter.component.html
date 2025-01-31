@@ -1,11 +1,25 @@
 <div class="fondo">
-  <aside><h1 class="titulo">Trivia de Harry potter</h1></aside>
-  <div>
-    @for (item of characters; track $index) { @if (item.image != null &&
-    item.name != null && item.species != null) {
-    <h2>{{ item.name }}</h2>
-    <img src="{{ item.image }}" alt="" />
-    <h3>{{ item.species }}</h3>
-    } }
+  <aside class="lateral">
+    <h1 class="titulo">Trivia de Harry potter</h1>
+    <p class="descripcion-juego">
+      El juego consiste en adivinar que personaje es el que se esta mostrando,
+      pueden ser tambien libro, capitulos y hasta posiciones de Harry Potter!
+      <br />
+      <strong>¿Cual sera tu record?</strong>
+    </p>
+  </aside>
+  <div class="juego-potter">
+    <div class="trivia">
+    
+    <h2 class="Sub-titulo">Intenta adivinar la trivia</h2>
+    <h3 class="textos">Respuesta correctar seguidas : {{adivinadas}}</h3>
+    <h3 class="textos">Respuesta correctar seguidas Record : {{record}}</h3>
+    
+    <button class="bg-yellow-500 text-black font-harryPotter px-6 py-3 rounded-lg shadow-lg border-2 border-black hover:bg-yellow-600 transition duration-300">
+      ✨ Hechizo Mágico ✨
+    </button>
+    
+    </div>
+    
   </div>
 </div>
