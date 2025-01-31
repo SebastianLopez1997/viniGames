@@ -51,10 +51,18 @@ export class HarryPotterComponent implements OnInit {
   //Funcion para obtener 1 personaje del array
 
   obtenerPJ() {
-    this.characterGame = this.characters[this.getRandomNumber(this.characters.length)];
+    this.characterGame =
+      this.characters[this.getRandomNumber(this.characters.length)];
+    if (this.characterGame.image == null) {
+      while (this.characterGame.image == null) {
+        this.characterGame =
+          this.characters[this.getRandomNumber(this.characters.length)];
+      }
+    }
   }
-  
-  
-  
-  
+
+  empezarJuego() {
+    this.obtenerPJ();
+    console.log(this.characterGame);
+  }
 }
