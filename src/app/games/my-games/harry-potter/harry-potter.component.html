@@ -14,22 +14,28 @@
       <h3 class="textos">Respuesta correctar seguidas : {{ adivinadas }}</h3>
       <h3 class="textos">Respuesta correctar seguidas Record : {{ record }}</h3>
 
-      <button class="harry-potter-button" (click)="empezarJuego()">
+      <button class="harry-potter-button" (click)="start()">
         ✨ Empezar juego ✨
       </button>
 
-      <div>
+      <div class="juego">
         <h3>¿Podras adivinarme?</h3>
         <div class="card">
           <img
-            src="{{characterGame?.image}}"
+            src="{{ characterGame.image }}"
             alt="Imagen Harry Potter"
             class="card-image"
           />
           <div class="card-name">
-            <p>Especie: {{characterGame?.species}}</p>
+            <p>Especie: {{ characterGame.species }}</p>
           </div>
         </div>
+        <P>Su nombre comienza con :  {{characterGame.name.charAt(0)}} nombre: {{characterGame.name}}</P>
+        <p>Escriba su respuesta:</p>
+        <form action="" [formGroup]="formulario">
+          <input type="text" formControlName="respuesta" placeholder="Respuesta" />
+          <button type="submit" (click)="empezarJuego()">Enviar</button>
+        </form>
       </div>
     </div>
   </div>

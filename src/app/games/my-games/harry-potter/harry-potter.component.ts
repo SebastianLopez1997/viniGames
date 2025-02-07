@@ -2,11 +2,17 @@ import { Component, inject, OnInit } from '@angular/core';
 import { HarryServicesService } from '../../services/harry-potter/harry-services.service';
 import { timeout } from 'rxjs';
 import { HarryI } from '../interfaces/harry-i';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-harry-potter',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './harry-potter.component.html',
   styleUrl: './harry-potter.component.css',
 })
@@ -14,11 +20,17 @@ export class HarryPotterComponent implements OnInit {
   characters: { name: string; image: string; species: string }[] = [];
   record: number = 0;
   adivinadas: number = 0;
-  characterGame: HarryI | undefined;
+  characterGame: HarryI = { name: '', image: '', species: '' };
 
   ngOnInit(): void {
     this.obtenerCharacters();
   }
+
+  private fb = inject(FormBuilder);
+
+  formulario = this.fb.nonNullable.group({
+    respuesta: ['', [Validators.minLength(3)]],
+  });
 
   obtenerCharacters() {
     let item: number = 1;
@@ -61,8 +73,26 @@ export class HarryPotterComponent implements OnInit {
     }
   }
 
-  empezarJuego() {
+  start() {
     this.obtenerPJ();
+  }
+
+  empezarJuego() {
     console.log(this.characterGame);
+    const rta = this.formulario.getRawValue().respuesta;
+    alert(rta);
+    alert(this.characterGame.name);
+    if (
+      rta.toLocaleLowerCase() === this.characterGame.name.toLocaleLowerCase()
+    ) {
+      this.adivinadas++;
+      alert('Excelente! sumaste 1 punto');
+    } else {
+      if (this.adivinadas > this.record) {
+        this.record = this.adivinadas;
+      }
+      alert('Perdiste, no era el personaje');
+    }
+    this.obtenerPJ();
   }
 }
