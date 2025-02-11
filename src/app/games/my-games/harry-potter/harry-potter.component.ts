@@ -22,7 +22,10 @@ export class HarryPotterComponent implements OnInit {
   record: number = 0;
   adivinadas: number = 0;
   characterGame: HarryI = { name: '', image: '', species: '' };
-  gameOn = false;
+  opciones: string[] = [];
+  gameOn: boolean = false;
+  nombre2: string | null = null;
+  nombre3: string | null = null;
 
   ngOnInit(): void {
     this.obtenerCharacters();
@@ -75,8 +78,19 @@ export class HarryPotterComponent implements OnInit {
     }
   }
 
+  obtenerOpciones() {
+    this.opciones.push(this.characterGame.name);
+    this.opciones.push(
+      this.characters[this.getRandomNumber(this.characters.length)].name
+    );
+    this.opciones.push(
+      this.characters[this.getRandomNumber(this.characters.length)].name
+    );
+  }
+
   start() {
     this.obtenerPJ();
+    this.obtenerOpciones();
     this.gameOn = true;
   }
 
@@ -96,8 +110,8 @@ export class HarryPotterComponent implements OnInit {
       }
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
-        text: 'Perdiste, no era el personaje',
+        title: `No adivinaste`,
+        text: 'Mejor suerte la proxima',
       });
     }
     this.obtenerPJ();

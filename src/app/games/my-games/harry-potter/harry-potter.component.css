@@ -198,3 +198,81 @@ input:focus::placeholder {
   0% { transform: translateY(-10px) scale(1); }
   100% { transform: translateY(10px) scale(1.1); }
 }
+
+/* Botones de opciones */
+
+.magic-button {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+/* Botón 1 - Resplandor Místico */
+.btn-glow {
+  background: linear-gradient(45deg, #ff00ff, #ff1493, #00ffff);
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.6), 0px 0px 30px rgba(0, 255, 255, 0.4);
+}
+
+.btn-glow:hover {
+  box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.8), 0px 0px 40px rgba(0, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.btn-glow:active {
+  transform: scale(0.9);
+}
+
+/* Botón 2 - Portal Luminoso */
+.btn-portal {
+  background: transparent;
+  border: 2px solid #8e44ad;
+  position: relative;
+}
+
+.btn-portal::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  background: radial-gradient(circle, #8e44ad, transparent);
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.btn-portal:hover::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.btn-portal:hover {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  transform: scale(1.1);
+}
+
+/* Botón 3 - Energía Celestial */
+.btn-energy {
+  background: linear-gradient(90deg, #ffdd00, #ff8800);
+  box-shadow: 0px 0px 15px rgba(255, 221, 0, 0.8), 0px 0px 30px rgba(255, 136, 0, 0.6);
+  transition: 0.3s ease-in-out;
+}
+
+.btn-energy:hover {
+  box-shadow: 0px 0px 30px rgba(255, 221, 0, 1), 0px 0px 50px rgba(255, 136, 0, 0.8);
+  transform: scale(1.1) rotate(3deg);
+}
+
+.btn-energy:active {
+  transform: scale(0.9);
+}

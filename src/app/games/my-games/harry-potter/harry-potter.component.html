@@ -30,27 +30,16 @@
             <p>Especie: {{ characterGame.species }}</p>
           </div>
         </div>
-        <P
-          >Su nombre comienza con : {{ characterGame.name.charAt(0) }} nombre:
-          {{ characterGame.name }}</P
-        >
-        <p>Escriba su respuesta:</p>
-        <form action="" [formGroup]="formulario">
-          <div class="input-container">
-            <div class="glow"></div>
-            <input
-              type="text"
-              formControlName="respuesta"
-              placeholder="Respuesta"
-            />
-          </div>
-          <div class="button-container">
-            <div class="glow-effect"></div>
-            <button type="submit" class="magic-button" (click)="empezarJuego()">
-              Enviar
-            </button>
-          </div>
-        </form>
+        <h2>OPCIONES</h2>
+        @for (item of opciones; track $index) {
+        <button class="magic-button btn-energy">{{ item }}</button>}
+
+        <div class="button-container">
+          <div class="glow-effect"></div>
+          <button type="submit" class="magic-button" (click)="empezarJuego()">
+            Enviar
+          </button>
+        </div>
       </div>
       }
     </div>
