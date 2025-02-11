@@ -24,8 +24,7 @@ export class HarryPotterComponent implements OnInit {
   characterGame: HarryI = { name: '', image: '', species: '' };
   opciones: string[] = [];
   gameOn: boolean = false;
-  nombre2: string | null = null;
-  nombre3: string | null = null;
+  seleccion: string = '';
 
   ngOnInit(): void {
     this.obtenerCharacters();
@@ -79,6 +78,7 @@ export class HarryPotterComponent implements OnInit {
   }
 
   obtenerOpciones() {
+    this.opciones.length = 0;
     this.opciones.push(this.characterGame.name);
     this.opciones.push(
       this.characters[this.getRandomNumber(this.characters.length)].name
@@ -86,6 +86,7 @@ export class HarryPotterComponent implements OnInit {
     this.opciones.push(
       this.characters[this.getRandomNumber(this.characters.length)].name
     );
+    this.opciones.sort()
   }
 
   start() {
@@ -95,12 +96,9 @@ export class HarryPotterComponent implements OnInit {
   }
 
   empezarJuego() {
-    console.log(this.characterGame);
-    const rta = this.formulario.getRawValue().respuesta;
-    Swal.fire(rta);
-    Swal.fire(this.characterGame.name);
     if (
-      rta.toLocaleLowerCase() === this.characterGame.name.toLocaleLowerCase()
+      this.seleccion.toLocaleLowerCase() ===
+      this.characterGame.name.toLocaleLowerCase()
     ) {
       this.adivinadas++;
       Swal.fire('Excelente! sumaste 1 punto');
@@ -108,12 +106,19 @@ export class HarryPotterComponent implements OnInit {
       if (this.adivinadas > this.record) {
         this.record = this.adivinadas;
       }
+      this.adivinadas = 0;
       Swal.fire({
         icon: 'error',
         title: `No adivinaste`,
         text: 'Mejor suerte la proxima',
       });
     }
+
     this.obtenerPJ();
+    this.obtenerOpciones();
+  }
+
+  pick(name: string) {
+    this.seleccion = name;
   }
 }

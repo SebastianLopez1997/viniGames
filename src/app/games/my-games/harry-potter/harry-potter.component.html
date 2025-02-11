@@ -31,11 +31,18 @@
           </div>
         </div>
         <h2>OPCIONES</h2>
-        @for (item of opciones; track $index) {
-        <button class="magic-button btn-energy">{{ item }}</button>}
+        <div class="options">
+          @for (item of opciones; track $index) {
+          <button class="magic-button btn-energy" (click)="pick(item)">
+            {{ item }}</button
+          >}
+        </div>
 
         <div class="button-container">
           <div class="glow-effect"></div>
+          @if (seleccion.length > 2) {
+          <h4>Usted marco la opcion de {{ seleccion }}</h4>
+          }
           <button type="submit" class="magic-button" (click)="empezarJuego()">
             Enviar
           </button>

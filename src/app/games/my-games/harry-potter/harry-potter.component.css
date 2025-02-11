@@ -206,7 +206,7 @@ input:focus::placeholder {
   padding: 12px 30px;
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: #1a05ba;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -275,4 +275,12 @@ input:focus::placeholder {
 
 .btn-energy:active {
   transform: scale(0.9);
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+  padding: auto;
 }
