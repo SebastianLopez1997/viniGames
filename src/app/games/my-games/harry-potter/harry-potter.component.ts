@@ -8,6 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-harry-potter',
@@ -21,6 +22,7 @@ export class HarryPotterComponent implements OnInit {
   record: number = 0;
   adivinadas: number = 0;
   characterGame: HarryI = { name: '', image: '', species: '' };
+  gameOn = false;
 
   ngOnInit(): void {
     this.obtenerCharacters();
@@ -75,23 +77,28 @@ export class HarryPotterComponent implements OnInit {
 
   start() {
     this.obtenerPJ();
+    this.gameOn = true;
   }
 
   empezarJuego() {
     console.log(this.characterGame);
     const rta = this.formulario.getRawValue().respuesta;
-    alert(rta);
-    alert(this.characterGame.name);
+    Swal.fire(rta);
+    Swal.fire(this.characterGame.name);
     if (
       rta.toLocaleLowerCase() === this.characterGame.name.toLocaleLowerCase()
     ) {
       this.adivinadas++;
-      alert('Excelente! sumaste 1 punto');
+      Swal.fire('Excelente! sumaste 1 punto');
     } else {
       if (this.adivinadas > this.record) {
         this.record = this.adivinadas;
       }
-      alert('Perdiste, no era el personaje');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Perdiste, no era el personaje',
+      });
     }
     this.obtenerPJ();
   }

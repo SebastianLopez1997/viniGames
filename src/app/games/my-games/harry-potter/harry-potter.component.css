@@ -72,3 +72,129 @@
   position: relative;
   margin-top: 20px;
 }
+
+/* PARA EL BOTON DE ENVIAR Y EL INPUT DE LA RTA */
+
+.input-container {
+  position: relative;
+}
+
+input {
+  width: 280px;
+  padding: 12px 18px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  outline: none;
+  font-size: 18px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #8e44ad;
+  box-shadow: 0px 0px 20px rgba(142, 68, 173, 0.8), 
+              0px 0px 40px rgba(142, 68, 173, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 50px;
+  background: linear-gradient(45deg, #ff00ff, #ff1493, #00ffff);
+  filter: blur(15px);
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+
+.magic-button {
+  position: relative;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff00ff, #ff1493, #00ffff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.6), 
+              0px 0px 30px rgba(0, 255, 255, 0.4);
+}
+
+.magic-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 50%);
+  transform: rotate(25deg);
+  transition: 0.4s;
+}
+
+.magic-button:hover::before {
+  top: -20%;
+  left: -20%;
+}
+
+.magic-button:hover {
+  box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.8), 
+              0px 0px 40px rgba(0, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.magic-button:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.4), 
+              0px 0px 20px rgba(0, 255, 255, 0.3);
+}
+
+.glow-effect {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 0, 255, 0.5);
+  filter: blur(25px);
+  opacity: 0.7;
+  border-radius: 50%;
+  z-index: -1;
+  animation: floating 3s infinite alternate ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translateY(-10px) scale(1); }
+  100% { transform: translateY(10px) scale(1.1); }
+}

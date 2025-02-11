@@ -17,7 +17,7 @@
       <button class="harry-potter-button" (click)="start()">
         ✨ Empezar juego ✨
       </button>
-
+      @if (gameOn) {
       <div class="juego">
         <h3>¿Podras adivinarme?</h3>
         <div class="card">
@@ -30,13 +30,29 @@
             <p>Especie: {{ characterGame.species }}</p>
           </div>
         </div>
-        <P>Su nombre comienza con :  {{characterGame.name.charAt(0)}} nombre: {{characterGame.name}}</P>
+        <P
+          >Su nombre comienza con : {{ characterGame.name.charAt(0) }} nombre:
+          {{ characterGame.name }}</P
+        >
         <p>Escriba su respuesta:</p>
         <form action="" [formGroup]="formulario">
-          <input type="text" formControlName="respuesta" placeholder="Respuesta" />
-          <button type="submit" (click)="empezarJuego()">Enviar</button>
+          <div class="input-container">
+            <div class="glow"></div>
+            <input
+              type="text"
+              formControlName="respuesta"
+              placeholder="Respuesta"
+            />
+          </div>
+          <div class="button-container">
+            <div class="glow-effect"></div>
+            <button type="submit" class="magic-button" (click)="empezarJuego()">
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
+      }
     </div>
   </div>
 </div>
