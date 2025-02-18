@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-harry-potter',
@@ -29,7 +30,13 @@ export class HarryPotterComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerCharacters();
   }
-
+  
+  router = inject(Router);
+  
+  back(){
+    this.router.navigate(['/home']);
+  }
+  
   private fb = inject(FormBuilder);
 
   formulario = this.fb.nonNullable.group({

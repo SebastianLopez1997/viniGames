@@ -14,10 +14,12 @@
       <h3 class="textos">Respuesta correctar seguidas : {{ adivinadas }}</h3>
       <h3 class="textos">Respuesta correctar seguidas Record : {{ record }}</h3>
 
-      <button class="harry-potter-button" (click)="start()">
-        ✨ Empezar juego ✨
-      </button>
+      
       @if (gameOn) {
+        <button class="harry-potter-button" (click)="back()" >
+          ✨ Volver la Inicio ✨
+        </button>
+      
       <div class="juego">
         <h3>¿Podras adivinarme?</h3>
         <div class="card">
@@ -48,6 +50,10 @@
           </button>
         </div>
       </div>
+      }@else {
+        <button class="harry-potter-button" (click)="start()">
+          ✨ Empezar juego ✨
+        </button>
       }
     </div>
   </div>
