@@ -18,13 +18,18 @@ export class GamesComponent {
       alt: 'Juego clicker',
       router: 'juego/clicker',
     },
-    
+
     {
-     img: 'portada-juegos/trivia-potter.jpg',
-      titulo: 'Harry potter trivial',
-      alt: 'Harry potter trivial',
+      img: 'portada-juegos/trivia-potter.jpg',
+      titulo: 'Harry potter trivia',
+      alt: 'Harry potter trivia',
       router: 'juego/harry-potter',
-    }
-   
+    },
+    {
+      img: 'portada-juegos/magic_trivia_game.jpg',
+      titulo: 'Magic trivia',
+      alt: 'Magic the gathering trivia',
+      router: 'juego/magic',
+    },
   ];
 }
