@@ -24,14 +24,23 @@
     margin-top: 20px;
   }
 }
-.contenedor{
+.contenedor {
   display: flex;
   height: 100%;
   width: 100%;
 }
 
 .contenedorGames {
-  height: auto;
+  height: 100%;
   width: 100%;
   background-color: rgba(54, 56, 55, 0.704);
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  
+  
+  .lateral {
+    display: none;
+  }
 }

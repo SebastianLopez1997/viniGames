@@ -3,10 +3,10 @@ h1 {
   font-size: 4rem;
 }
 
-.contenedor{
+.contenedor {
   display: flex;
   flex-direction: row;
-  
+
   width: auto;
   height: auto;
   overflow-y: scroll;
@@ -16,7 +16,9 @@ h1 {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  height: 1100px;
   padding: 15px;
+  gap: 15px;
   overflow-y: scroll;
 }
 
@@ -40,6 +42,7 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
+  
 }
 
 .juego:hover {
@@ -58,4 +61,10 @@ h1 {
   align-items: center;
   height: 100px;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
