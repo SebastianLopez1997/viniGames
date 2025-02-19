@@ -3,11 +3,21 @@ h1 {
   font-size: 4rem;
 }
 
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  
+  width: auto;
+  height: auto;
+  overflow-y: scroll;
+}
+
 .contenedor-juegos {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   padding: 15px;
+  overflow-y: scroll;
 }
 
 .jugar {

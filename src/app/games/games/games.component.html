@@ -1,13 +1,15 @@
-<H1>Juegos</H1>
-<div class="contenedor-juegos">
-  @for (item of juegos; track $index) {
+<div class="contenedor">
+  <H1>Juegos</H1>
+  <div class="contenedor-juegos">
+    @for (item of juegos; track $index) {
 
-  <div class="juego">
-    <img class="imagen-juego" src="{{ item.img }}" alt="{{ item.alt }}" />
-    <div class="juego-textos">
-      <h2 class="contador">{{ item.titulo }}</h2>
-      <a routerLink="{{ item.router }}" class="jugar">Jugar!</a>
+    <div class="juego">
+      <img class="imagen-juego" src="{{ item.img }}" alt="{{ item.alt }}" />
+      <div class="juego-textos">
+        <h2 class="contador">{{ item.titulo }}</h2>
+        <a routerLink="{{ item.router }}" class="jugar">Jugar!</a>
+      </div>
     </div>
+    }
   </div>
-  }
 </div>
